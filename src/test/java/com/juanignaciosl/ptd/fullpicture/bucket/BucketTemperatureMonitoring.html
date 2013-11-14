@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<html xmlns:concordion="http://www.concordion.org/2007/concordion">
+<body>
+	<p>
+		Quiero que si la cubeta está a <span
+			concordion:set="#bucketTemperature">30</span>º una página me diga que
+		está a <span
+			concordion:assertEquals="bucketTemperature(#bucketTemperature)">30</span>º.
+	</p>
+	<p>
+		Quiero <span concordion:assertTrue="weeklyChartDisplayed()">ver una gráfica con la
+			media de los últimos 7 días</span>.
+	</p>
+	<p>Ah, y estaría bien que si la temperatura actual es superior a la
+		media de los últimos 7 días (por ejemplo <span
+			concordion:set="#bucketTemperature">1000</span>), la <span concordion:assertTrue="isRed()">temperatura salga en rojo</span>.</p>
+</body>
+</html>
