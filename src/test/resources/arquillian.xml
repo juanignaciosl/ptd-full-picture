@@ -11,11 +11,11 @@
 
    <!-- Example configuration for a remote JBoss AS 7 instance -->
    <container qualifier="jboss" default="true">
-      <protocol type="jmx-as7">
+      <!-- <protocol type="jmx-as7">
          <property name="executionType">REMOTE</property>
-      </protocol>
+      </protocol> -->
       <configuration>
-         <property name="jbossHome">/path/to/jboss/as</property>
+         <property name="jbossHome">/Users/juanignaciosl/Development/servidores/jboss-as-7.1.1.Final-ptd</property>
       </configuration>
    </container>
 
