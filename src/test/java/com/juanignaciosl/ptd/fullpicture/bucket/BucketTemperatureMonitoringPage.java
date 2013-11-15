@@ -37,4 +37,8 @@ public class BucketTemperatureMonitoringPage {
 		return temperatures;
 	}
 
+	public String getTemperatureColor() {
+		return temperature.getCssValue("color");
+	}
+
 }

@@ -7,7 +7,7 @@
 	
 	<ui:define name="content">
 
-	<span id="temperature">${bucket.temperature}</span>
+	<span id="temperature" style="color: ${bucket.alarm ? 'red' : ''}">${bucket.temperature}</span>
 	
 	<ui:repeat var="temperature" value="${bucket.weekTemperatures()}">
 		<span class="weekTemperature">${temperature}</span>

@@ -30,8 +30,8 @@ public class Bucket {
 		this.temperature = temperature;
 	}
 
-	@Inject
-	private EntityManager em;
+	@Inject 
+	protected EntityManager em;
 
 	public Double averageTemperature(Date date) {
 		final TypedQuery<Double> averageDateTemperature = em
@@ -59,6 +59,15 @@ public class Bucket {
 			temperatures.add(averageTemperature(DateUtils.add(today, Calendar.DAY_OF_MONTH, -i)));
 		}
 		return temperatures;
+	}
+	
+	public boolean isAlarm() {
+		Double average = 0d;
+		final List<Double> weekTemperatures = weekTemperatures();
+		for(final Double temperature: weekTemperatures) {
+			average += temperature;
+		}
+		return temperature >= (average / weekTemperatures.size());
 	}
 
 }
