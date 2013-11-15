@@ -14,6 +14,15 @@ import javax.validation.constraints.NotNull;
 @Table
 public class Temperature {
 
+	public Temperature() {
+		
+	}
+	
+	public Temperature(Date date, long temperature) {
+		this.date = date;
+		this.measuredTemperature = temperature;
+	}
+
 	@Id
 	@GeneratedValue
 	private Long id;
