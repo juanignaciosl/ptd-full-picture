@@ -4,6 +4,7 @@ import static org.hamcrest.CoreMatchers.equalTo;
 import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
+import java.util.Arrays;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -89,6 +90,14 @@ public class BucketWeekTemperatureTest {
 		em.clear();
 
 		assertThat(bucket.averageTemperature(tomorrow), is(equalTo(5d)));
+	}
+
+	@Test
+	public void readWeekTemperatures() {
+		assertThat(
+				bucket.weekTemperatures(),
+				is(equalTo(Arrays.asList(new Double[] { 0d, 0d, 0d, 0d, 0d, 0d,
+						0d, }))));
 	}
 
 }

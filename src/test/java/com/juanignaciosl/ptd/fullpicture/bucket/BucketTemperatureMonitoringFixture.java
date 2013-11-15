@@ -1,11 +1,14 @@
 package com.juanignaciosl.ptd.fullpicture.bucket;
 
+import org.concordion.api.extension.Extensions;
+import org.concordion.ext.ScreenshotExtension;
 import org.concordion.integration.junit4.ConcordionRunner;
 import org.junit.runner.RunWith;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 
 @RunWith(ConcordionRunner.class)
+@Extensions(ScreenshotExtension.class)
 public class BucketTemperatureMonitoringFixture {
 	WebDriver driver = new HtmlUnitDriver();
 

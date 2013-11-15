@@ -1,7 +1,9 @@
 package com.juanignaciosl.ptd.fullpicture.controller;
 
+import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.List;
 
 import javax.ejb.Stateful;
 import javax.enterprise.context.ApplicationScoped;
@@ -48,6 +50,15 @@ public class Bucket {
 
 	private Date start(Date date) {
 		return DateUtils.truncate(date, Calendar.DATE);
+	}
+
+	public List<Double> weekTemperatures() {
+		final Date today = new Date();
+		final List<Double> temperatures = new ArrayList<Double>();
+		for(int i = 7; i > 0; i--) {
+			temperatures.add(averageTemperature(DateUtils.add(today, Calendar.DAY_OF_MONTH, -i)));
+		}
+		return temperatures;
 	}
 
 }

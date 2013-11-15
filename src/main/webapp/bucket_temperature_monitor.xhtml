@@ -9,6 +9,10 @@
 
 	<span id="temperature">${bucket.temperature}</span>
 	
+	<ui:repeat var="temperature" value="${bucket.weekTemperatures()}">
+		<span class="weekTemperature">${temperature}</span>
+	</ui:repeat>
+	
 	</ui:define>
 
 </ui:composition>
