@@ -7,17 +7,21 @@ import org.openqa.selenium.htmlunit.HtmlUnitDriver;
 
 @RunWith(ConcordionRunner.class)
 public class BucketTemperatureMonitoringFixture {
+	WebDriver driver = new HtmlUnitDriver();
+
+	BucketTemperatureSimulatorPage simulatorPage;
+	BucketTemperatureMonitoringPage monitoringPage;
 
 	public String bucketTemperature(String inputTemperature) {
-		final WebDriver driver = new HtmlUnitDriver();
-
-		final BucketTemperatureSimulatorPage simulatorPage = new BucketTemperatureSimulatorPage(
-				driver);
+		simulatorPage = new BucketTemperatureSimulatorPage(driver);
 		simulatorPage.setTemperature(inputTemperature);
-
-		final BucketTemperatureMonitoringPage monitoringPage = new BucketTemperatureMonitoringPage(
-				driver);
+		monitoringPage = new BucketTemperatureMonitoringPage(driver);
 		return monitoringPage.getTemperature();
+	}
+	
+	public boolean weeklyChartDisplayed() {
+		monitoringPage = new BucketTemperatureMonitoringPage(driver);
+		return monitoringPage.getWeekTemperature().size() == 7;
 	}
 
 }
